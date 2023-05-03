@@ -5,12 +5,7 @@ const axios = require('axios');
 
 async function run() {
   try {
-    axios.interceptors.request.use(request => {
-      request.maxContentLength = Infinity;
-      request.maxBodyLength = Infinity;
-      return request;
-    })
-    
+
     const url = core.getInput('url')
     const headers = JSON.parse(core.getInput('headers') || '{}')
     const data = JSON.parse(core.getInput('data') || '{}')
